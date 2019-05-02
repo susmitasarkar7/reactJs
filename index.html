@@ -1,49 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<title>Test React</title>
-
-<script src="https://fb.me/react-0.13.3.js"></script>
-<script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/JSXTransformer.js"></script>
 
     <script type="text/jsx">
-        var Counter = React.createClass({
-            getInitialState: function () {
-                return {
-                    count: 0
-                };
-            },
-    
-            increment: function() {
-                this.setState({count: this.state.count +1});
-            },
-    
-            decrement: function() {
-                var count = this.state.count - 1;
-                
-                if (count < 0 ) {
-                    count = 0;
-                }
-                
-                this.setState({count: count});
-            },
-    
+        var HelloWorld = React.createClass({
             render: function() {
-                return (
-                    <div>
-                        <h1>Counter : {this.state.count}</h1>
-                        <button onClick={this.decrement}>-1</button>
-                        <button onClick={this.increment}>+1</button>
-                    </div>
-                );
+                return <div>Hello World</div>;
             }
-    
         });
-    
-        React.render(<Counter />, document.body);
-    </script>
 
+        React.render(<HelloWorld />, document.body)
+    </script>
 </body>
-</html> 
+</html>
