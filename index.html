@@ -21,7 +21,13 @@
             },
     
             decrement: function() {
-                this.setState({count: this.state.count -1});
+                var count = this.state.count - 1;
+                
+                if (count < 0 ) {
+                    count = 0;
+                }
+                
+                this.setState({count: count});
             },
     
             render: function() {
