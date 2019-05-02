@@ -8,27 +8,36 @@
 
 <body>
 
-<script type="text/jsx">
-    var Counter = React.createClass({
-        getInitialState: function () {
-            return {
-                count: 0
-            };
-        },
-
-        render: function() {
-            return (
-                <div>
-                    <h1>Counter : {this.state.count}</h1>
-                    <button>+1</button>
-                </div>
-            );
-        }
-
-    });
-
-    React.render(<Counter />, document.body);
-</script>
+    <script type="text/jsx">
+        var Counter = React.createClass({
+            getInitialState: function () {
+                return {
+                    count: 0
+                };
+            },
+    
+            increment: function() {
+                this.setState({count: this.state.count +1});
+            },
+    
+            decrement: function() {
+                this.setState({count: this.state.count -1});
+            },
+    
+            render: function() {
+                return (
+                    <div>
+                        <h1>Counter : {this.state.count}</h1>
+                        <button onClick={this.decrement}>-1</button>
+                        <button onClick={this.increment}>+1</button>
+                    </div>
+                );
+            }
+    
+        });
+    
+        React.render(<Counter />, document.body);
+    </script>
 
 </body>
 </html> 
